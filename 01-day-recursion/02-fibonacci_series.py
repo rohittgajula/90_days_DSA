@@ -26,7 +26,7 @@ class Solution:
 
 
 solution = Solution()
-n = 10
+n = 5
 print(solution.fibonacchi_without_recursion(n))
 print([solution.fibonacchi_recursion(i) for i in range(n)])
 

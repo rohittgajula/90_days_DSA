@@ -9,6 +9,7 @@ def powerset(arr):
         for subset in powerset(arr[1:]):
             allSubsets += [subset]
             allSubsets += [[arr[0]] + subset]
+
         return allSubsets
 
 
