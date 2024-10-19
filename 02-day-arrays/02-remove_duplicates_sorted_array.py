@@ -1,4 +1,4 @@
-
+# two pointer
 
 # using 2 pointer - r to scan through array & l to count unique place
 

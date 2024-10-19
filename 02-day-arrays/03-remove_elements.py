@@ -1,4 +1,4 @@
-
+# two pointer
 
 def remove_element(nums, val):
     
