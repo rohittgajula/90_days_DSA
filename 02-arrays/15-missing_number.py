@@ -2,7 +2,6 @@
 
 
 def missing_number(nums):
-
     for i in range(1, len(nums)):
         if i not in nums:
             return i
