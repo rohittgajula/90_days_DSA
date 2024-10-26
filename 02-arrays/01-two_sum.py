@@ -16,8 +16,21 @@ class Solution:
             if diff in hashMap:
                 return [hashMap[diff], i]
             hashMap[n] = i
-            print(hashMap)
         return None
+    
+    def two_sum_using_while(self, nums, target):
+        left = 0
+        right = len(nums)-1
+
+        while left < right:
+            current_sum = nums[left] + nums[right]
+
+            if current_sum == target:
+                return [left, right]
+            elif current_sum < target:
+                left += 1
+            else:
+                right -= 1
 
 
 nums = [2,7,11,15]
@@ -25,3 +38,4 @@ target = 26
 solution = Solution()
 print(solution.two_sum(nums, target))
 print(solution.two_sum_hashmap(nums, target))
+print(solution.two_sum_using_while(nums, target))
