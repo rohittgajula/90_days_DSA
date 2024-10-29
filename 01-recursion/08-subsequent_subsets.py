@@ -18,7 +18,6 @@ class Solution:
 
         for element in arr:
             new_subsets = []
-
             for subset in subsets:
                 new_subset = subset + [element]
                 new_subsets.append(new_subset)

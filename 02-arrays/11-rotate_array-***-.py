@@ -1,7 +1,4 @@
 
-
-
-
 def rotate_array(nums, k):
     n = len(nums)
     k = k % n
@@ -29,6 +26,28 @@ def rotate_array(nums, k):
 
     return nums
 
-nums = [1,2,3,4,5,6,7]
-k = 3
-print(rotate_array(nums, k))
+
+def rotate(nums, k):
+    n = len(nums)
+    rotate = [0] * n
+    for i in range(n):
+        correct_index = (i + k) % n
+        rotate[correct_index] = nums[i]
+    return rotate
+
+
+def rotateArray(nums, k):
+    n = len(nums)
+    for _ in range(k):
+        last = nums[-1]
+        for i in range(n-1, 0, -1):
+            nums[i] = nums[i-1]
+        nums[0] = last
+    return nums
+
+
+nums = [1,2,3,4,5]
+k = 2
+print(rotate_array(nums[:], k))     # Pass a copy of nums
+print(rotate(nums[:], k))
+print(rotateArray(nums[:], k))      # Pass a copy of nums
