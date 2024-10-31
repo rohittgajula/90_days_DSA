@@ -1,4 +1,5 @@
-
+# Choose a star in s
+# Remove the closest non-star character to its left, as well as remove the star itself.
 
 def remove_stars(s):
     stack = []
