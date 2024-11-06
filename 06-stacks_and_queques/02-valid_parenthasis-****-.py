@@ -20,5 +20,5 @@ def is_valid_parentheses(s):
     
     return True if not stack else False
 
-s = "()[]{}"
+s = "(())[]{}"
 print(is_valid_parentheses(s))
