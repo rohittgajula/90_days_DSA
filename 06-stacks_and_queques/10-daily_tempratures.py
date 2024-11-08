@@ -1,6 +1,6 @@
 
 
-def daily_tempratures(temperatures):
+def daily_temperatures(temperatures):
 
     res = [0] * len(temperatures)
     stack = []
@@ -13,7 +13,7 @@ def daily_tempratures(temperatures):
     return res
     
 
-def dailyTempratures(temperatures):
+def dailyTemperatures(temperatures):
 
     res = [0] * len(temperatures)
     stack = []
@@ -28,6 +28,6 @@ def dailyTempratures(temperatures):
 
 
 temperatures = [73,74,75,71,69,72,76,73]
-print(daily_tempratures(temperatures))
-print(dailyTempratures(temperatures))
+print(daily_temperatures(temperatures))
+print(dailyTemperatures(temperatures))
 
