@@ -23,6 +23,12 @@ class BloomFilter:
         for hash_value in self._hasher(item):
             self.bit_array[hash_value] = 1
 
+    def check(self, item):
+        for has_value in self._hasher(item):
+            if self.bit_array[has_value] == 0:
+                return False
+        return True
+
     def save_filter(self):
         file_path = os.path.join(self.current_path, self.file_name)
         with open(file_path, 'w') as f:
@@ -38,7 +44,12 @@ class BloomFilter:
 
 
 bloom_filter = BloomFilter(size=10000, num_hashes=3)
-email = "rohitgajula@gmail.com"
-bloom_filter.add(email)
+email = "rohitgajula27@gmail.com"
+if bloom_filter.check(email):
+    print("Exists!")
+else:
+    bloom_filter.add(email)
+    bloom_filter.save_filter()
+    print("Added!")
 
 
