@@ -24,6 +24,17 @@ def is_alnum(c):
             ord('a') <= ord(c) <= ord('z') or
             ord('0') <= ord(c) <= ord('9'))
 
+
+def pal(s):
+    cleaned = ""
+    for char in s:
+        if char.isalnum():
+            cleaned += char.lower()
+    
+    reversed_cleaned = cleaned[::-1]
+    return cleaned == reversed_cleaned
+
 s = "A man, a plan, a canal: Panama"
 print(palindrome(s))
+print(pal(s))
 

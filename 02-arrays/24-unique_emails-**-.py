@@ -10,7 +10,7 @@ def unique_email_1(emails):
         unique_email.add((local, domain))
     return len(unique_email)
 
-# with inbuilt fujnctions
+# with inbuilt function
 def unique_email(emails):
     uniquemails = set()
     for e in emails:

@@ -57,7 +57,7 @@ def is_palindrome_with_inbuilt_function(s):
     for c in s:
         if c.isalnum():
             new_str += c.lower()
-    return new_str ==new_str[::-1]
+    return new_str == new_str[::-1]
 
 
 s = "A man, a plan, a canal: Panama"

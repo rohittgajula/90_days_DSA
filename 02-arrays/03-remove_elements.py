@@ -13,3 +13,4 @@ def remove_element(nums, val):
 nums = [3,2,2,3]
 val = 2
 print(remove_element(nums, val))
+

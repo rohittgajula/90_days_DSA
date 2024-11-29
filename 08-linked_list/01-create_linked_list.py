@@ -1,88 +1,95 @@
 
 
+
+
 class Node:
-    def __init__(self, data):
+    def __init__(self, data) -> None:
         self.data = data
         self.next = None
 
+    
 class LinkedList:
-    def __init__(self):
+    def __init__(self) -> None:
         self.head = None
 
-    def insert_at_beginning(self, data):
+    def insertInBegin(self, data):
         new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
-
-    def insert_at_end(self, data):
-        new_node = Node(data)
-        if not self.head:
+        if self.head is None:
             self.head = new_node
             return
+        else:
+            new_node.next = self.head
+            self.head = new_node
+
+    def insertAtEnd(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = new_node
+
+    def updateNode(self, position, data):
+        if position <= 0:
+            print("Invalid position!")
+            return
+        
         current = self.head
-        while current.next:
+        count = 1
+        while current is not None and count < position:
             current = current.next
+            count += 1
+        
+        if current is None:
+            print("Position out of bound!")
+            return
+        
+        current.data = data
+
+    def insertInMiddle(self, position, data):
+        new_node = Node(data)
+
+        if position <= 0:
+            print("Invalid Position!")
+            return
+        
+        if position == 1:
+            new_node.next = self.head
+            self.head = new_node
+            return
+        
+        current = self.head
+        count = 1
+        while current is not None and count < position - 1:
+            current = current.next
+            count += 1
+
+        if current is None:
+            print("Position out of bound!")
+            return
+        
+        new_node.next = current.next
         current.next = new_node
 
-    def delete_node(self, key):
+    def printList(self):
         current = self.head
-
-        # If the head node is to be deleted
-        if current and current.data == key:
-            self.head = current.next
-            current = None
+        if current is None:
+            print("None")
             return
-
-        # Find the node to be deleted
-        prev = None
-        while current and current.data != key:
-            prev = current
+        
+        while current is not None:
+            print(current.data, end="->")
             current = current.next
 
-        # If the key was not found
-        if not current:
-            print("Value not found in the list.")
-            return
 
-        # Unlink the node
-        prev.next = current.next
-        current = None
-
-    def search(self, key):
-        current = self.head
-        while current:
-            if current.data == key:
-                return True
-            current = current.next
-        return False
-
-    def traverse(self):
-        current = self.head
-        while current:
-            print(current.data, end=" -> ")
-            current = current.next
-        print("None")
-
-# Example usage
 if __name__ == "__main__":
     ll = LinkedList()
-    
-    # Insert operations
-    ll.insert_at_beginning(10)
-    ll.insert_at_beginning(20)
-    ll.insert_at_end(30)
-    ll.insert_at_end(40)
-    
-    print("Linked List after insertions:")
-    ll.traverse()
+    ll.insertInBegin(10)
+    ll.insertAtEnd(100)
+    ll.updateNode(1, 20)
+    ll.insertInMiddle(2,15)
+    ll.printList()
 
-    # Search operation
-    print("Search for 30:", ll.search(30))
-    print("Search for 50:", ll.search(50))
-
-    # Delete operation
-    ll.delete_node(20)
-    print("Linked List after deletion of 20:")
-    ll.traverse()
-    
-    ll.delete_node(50)  # Trying to delete a non-existing node
