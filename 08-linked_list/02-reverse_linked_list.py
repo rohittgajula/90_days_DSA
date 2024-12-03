@@ -20,7 +20,7 @@ def create_linkedList(values):
         return None
     head = Node(values[0])
     current = head
-    for value in values:
+    for value in values[1:]:
         current.next = Node(value)
         current = current.next
     return head

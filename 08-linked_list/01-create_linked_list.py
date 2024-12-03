@@ -1,7 +1,4 @@
 
-
-
-
 class Node:
     def __init__(self, data) -> None:
         self.data = data
@@ -74,6 +71,14 @@ class LinkedList:
         new_node.next = current.next
         current.next = new_node
 
+    def length(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
+
     def printList(self):
         current = self.head
         if current is None:
@@ -91,5 +96,6 @@ if __name__ == "__main__":
     ll.insertAtEnd(100)
     ll.updateNode(1, 20)
     ll.insertInMiddle(2,15)
+    print(f'length of linked-list : {ll.length()}')
     ll.printList()
 
