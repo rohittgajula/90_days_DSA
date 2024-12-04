@@ -7,6 +7,7 @@ class Node:
 
 
 def remove_element(head, value):
+
     while head is not None and head.value == value:
         head = head.next
 
@@ -21,7 +22,6 @@ def remove_element(head, value):
             current = current.next
     return head
 
-
 def create_linkedlist(values):
     if values is None:
         return None
@@ -34,12 +34,14 @@ def create_linkedlist(values):
     return head
 
 
-linked_list = create_linkedlist([1,1,2,2,3,4,6,7,7])
+linked_list = create_linkedlist([1,2,6,3,4,5,6])
 
-removed_elements_list = remove_element(linked_list, value = 1)
+value = 6
+removed_elements = remove_element(linked_list, value)
 
-current = removed_elements_list
+current = removed_elements
 while current:
     print(current.value, end="->")
     current = current.next
 
+    
