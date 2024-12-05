@@ -5,17 +5,18 @@ class Node:
         self.value = value
         self.next = None
 
-def remove_duplicates(head):
-    if head is None:
+
+def middle(head):
+    if not head:
         return None
     
-    current = head
-    while current and current.next:
-        if current.value == current.next.value:
-            current.next = current.next.next
-        else:
-            current = current.next
-    return head
+    slow = head
+    fast = head
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+    return slow
+
 
 def create_linkedlist(values):
     if not values:
@@ -28,13 +29,14 @@ def create_linkedlist(values):
         current = current.next
     return head
 
-linked_list = create_linkedlist([1,1,2])
+linked_list = create_linkedlist([1,2,3,4,5])
 
-removed_list = remove_duplicates(linked_list)
+middle_linkedlist = middle(linked_list)
 
-current = removed_list
+current = middle_linkedlist
 while current:
     print(current.value, end="->")
     current = current.next
 
 
+    

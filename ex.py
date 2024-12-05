@@ -5,27 +5,40 @@ class Node:
         self.value = value
         self.next = None
 
+def isPalindrome(head):
+    if not head:
+        return False
+    
+    # find mid value
+    fast = head
+    slow = head
 
-def remove_element(head, value):
-    while head is not None and head.value == value:
-        head = head.next
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
 
-    if head is None:
-        return None
+    # reverse the 2nd half
+    prev = None
+    while slow:
+        temp = slow.next
+        slow.next = prev
+        prev = slow
+        slow = temp
 
-    current = head
-    while current.next is not None:
-        if current.next.value == value:
-            current.next = current.next.next
-        else:
-            current = current.next
-    return head
-
+    # check for palindrome
+    left = head
+    right = prev
+    while right:
+        if left.value != right.value:
+            return False
+        left = left.next
+        right = right.next
+    return True
 
 def create_linkedlist(values):
-    if values is None:
+    if not values:
         return None
-    
+
     head = Node(values[0])
     current = head
     for value in values[1:]:
@@ -33,13 +46,10 @@ def create_linkedlist(values):
         current = current.next
     return head
 
+linked_list = create_linkedlist([1,2,2,1])
+print(isPalindrome(linked_list))
 
-linked_list = create_linkedlist([1,1,2,2,3,4,6,7,7])
-
-removed_elements_list = remove_element(linked_list, value = 1)
-
-current = removed_elements_list
-while current:
-    print(current.value, end="->")
-    current = current.next
-
+# current = linked_list
+# while current:
+#     print(current.value, end="->")
+#     current = current.next

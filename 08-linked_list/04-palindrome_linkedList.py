@@ -62,9 +62,9 @@ linked_list = create_linkedlist([1,2,2,1])
 
 print(is_palindrome(linked_list))
 
-current = linked_list
-while current:
-    print(current.value, end="->")
-    current = current.next
+# current = linked_list
+# while current:
+#     print(current.value, end="->")
+#     current = current.next
 
 
