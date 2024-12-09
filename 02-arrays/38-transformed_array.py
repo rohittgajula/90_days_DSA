@@ -17,3 +17,6 @@ def constructTransformedArray(nums):
 
 nums = [3,-2,1,1]
 print(constructTransformedArray(nums))
+
+
+
