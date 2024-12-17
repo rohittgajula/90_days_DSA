@@ -16,10 +16,9 @@ def merge_sorted_array(nums1, m, nums2, n):
         k -= 1
 
     while j >= 0:
-        if nums1[i] == nums2[j]:            # we dont need to add this. if they are equal we acn directly reduce j
-            nums1[k] = nums2[j]
-            j -= 1
-            k -= 1
+        nums1[k] = nums2[j]
+        j -= 1
+        k -= 1
     
     return nums1
 

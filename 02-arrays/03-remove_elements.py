@@ -10,7 +10,7 @@ def remove_element(nums, val):
     return count
 
 
-nums = [3,2,2,3]
+nums = [0,1,2,2,3,0,4,2]
 val = 2
 print(remove_element(nums, val))
 
