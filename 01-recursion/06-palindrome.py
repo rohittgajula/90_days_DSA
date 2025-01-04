@@ -16,12 +16,24 @@ class Solution:
     # without recursion
     def palindrome_without_recursion(self, string):
         return string == string[::-1]
+    
+    def palindrome(self, string):
+        left = 0
+        right = len(string)-1
+
+        while left <= right:
+            if string[left] != string[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
 
 
 string = "TENET"
 solution = Solution()
 print(solution.palindrome_without_recursion(string))
 print(solution.palindrome_with_recursion(string))
+print(solution.palindrome(string))
 
 
 

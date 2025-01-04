@@ -12,5 +12,5 @@ def plus_one(nums):
     return [1] + nums
 
 
-nums = [1,2,9]
+nums = [9,9,9]
 print(plus_one(nums))

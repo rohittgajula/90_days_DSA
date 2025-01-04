@@ -23,7 +23,6 @@ def valid_sudoku(board):
     return True
 
 
-
 class Solution:
     def isValidSudoku(self, board):
         return (self.is_row_valid(board) and

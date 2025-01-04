@@ -23,7 +23,7 @@ class Solution:
     # space comp : O(1) - only uses few variables regardless of size ie. result, i
 
 solution = Solution()
-n = 5
+n = 10
 print(solution.factorial(n))
 print(solution.without_recursion(n))
 

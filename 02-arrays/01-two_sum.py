@@ -2,13 +2,14 @@
 
 
 class Solution:
-    # using two pointers
+    # using two pointers - O(n^2)
     def two_sum(self, nums, target):
         for i in range(len(nums)):
             for j in range(len(nums)-1):
                 if nums[i] + nums[j] == target:
                     return [i,j]
                 
+    # dict - O(n)
     def two_sum_hashmap(self, nums, target):
         hashMap = {}
         for i, n in enumerate(nums):
@@ -18,6 +19,7 @@ class Solution:
             hashMap[n] = i
         return None
     
+    # binary search logic - O(1)
     def two_sum_using_while(self, nums, target):
         left = 0
         right = len(nums)-1
