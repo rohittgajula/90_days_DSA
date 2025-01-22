@@ -10,6 +10,16 @@ def replace_element(nums):
     return nums
 
 
+def replaceElement(nums):
+    for i in range(len(nums)):
+        if i == len(nums)-1:
+            nums[i] = -1
+        else:
+            nums[i] = max(nums[i+1:])
+    return nums
+
+
 nums = [17,18,5,4,6,1]
-print(replace_element(nums))
+print(replace_element(nums.copy()))
+print(replaceElement(nums.copy()))
 

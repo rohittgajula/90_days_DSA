@@ -10,5 +10,5 @@ def ans(s, k):
 
 s = "rohit"
 k = "h"
-print(ans(s, k))
+print(ans(s, k))            # orit
 

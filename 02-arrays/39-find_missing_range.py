@@ -17,8 +17,8 @@ def find_missing_range(nums, lower, upper):
             continue
         missing_range.append([nums[i]+1, nums[i+1]-1])
     
-    if upper > nums[n-1]:
-        missing_range.append([nums[n-1]+1, upper])
+    if nums[-1] < upper:
+        missing_range.append([nums[-1]+1, upper])
 
     return missing_range
 

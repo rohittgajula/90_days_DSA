@@ -6,7 +6,7 @@
 
 def single_element(nums):
     left = 0
-    right = len(nums)
+    right = len(nums)-1
 
     while left < right:
         middle = (left + right) // 2

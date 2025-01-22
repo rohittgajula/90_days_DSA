@@ -1,19 +1,24 @@
 
 
 
-def find_sim(nums1, nums2):
-    
-    common_elem = set()
-
-    for elem1 in nums1:
-        for elem2 in nums2:
-            if elem1 == elem2:
-                common_elem.add(elem1)
-    return common_elem
+def remove_duplicates(nums):
+    l = 0
+    for r in range(len(nums)):
+        if nums[l] != nums[r]:
+            l += 1
+            nums[l] = nums[r]
+    return nums[:l+1]
 
 
-nums1 = [3,7,1,5,9,15,21]
-nums2 = [3,10,16,5,3,27]
-print(find_sim(nums1, nums2))
+def remove_dup(nums):
+    seen = set()
+    unique_nums = [nums[0]]
+    for i in range(len(nums)):
+        if (nums[i] != unique_nums[-1]) and (nums[i] not in seen):
+            unique_nums.append(nums[i])
+            seen.add(nums[i])
+    return unique_nums
 
-
+nums = [0,0,1,1,1,2,2,3,3,4]
+print(remove_duplicates(nums))
+print(remove_dup(nums))

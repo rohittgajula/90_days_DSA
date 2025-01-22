@@ -10,7 +10,18 @@ def move_zeros(nums):
             l += 1
     return nums
 
+def brute_force(nums):
+    
+    result = [0] * len(nums)
+    count = 0
+
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            result[count] = nums[i]
+            count += 1
+    return result
+
 
 nums = [0,1,0,3,12]
 print(move_zeros(nums))
-
+print(brute_force(nums))
